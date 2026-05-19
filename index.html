@@ -3,452 +3,354 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Watch – Färgglada Silikonklockor</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Mr Watch – Color Your Life</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --col-blue: #2255CC;
-    --col-yellow: #F5C400;
-    --col-orange: #E8601A;
-    --col-lightblue: #6AB4E8;
-    --dark: #181818;
-    --light: #F8F7F4;
-    --card: #ffffff;
-    --text: #1A1A1A;
-    --muted: #888;
-    --border: #EAEAE4;
-    --accent: #E8601A;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; background: var(--light); color: var(--text); overflow-x: hidden; }
-
-  /* NAV */
-  nav {
-    background: #fff;
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    position: sticky; top: 0; z-index: 100;
-  }
-  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 3px; color: var(--dark); }
-  .logo em { color: var(--accent); font-style: normal; }
-  .nav-right { display: flex; gap: 2rem; align-items: center; }
-  .nav-right a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color .15s; }
-  .nav-right a:hover { color: var(--dark); }
-  .nav-cta {
-    background: var(--accent); color: #fff !important;
-    padding: .55rem 1.4rem; border-radius: 8px; font-weight: 700 !important;
-  }
-  .nav-cta:hover { background: #cc4f10 !important; }
-
-  /* HERO */
-  .hero {
-    max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-    padding: 5rem 2.5rem;
-  }
-  .hero-tag {
-    display: inline-block;
-    background: #FFF0E6; color: var(--accent);
-    font-size: .75rem; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; padding: .35rem 1rem;
-    border-radius: 20px; margin-bottom: 1.5rem;
-    border: 1px solid #FFCFAC;
-  }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
-    line-height: .92; letter-spacing: 2px; color: var(--dark);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 em { color: var(--accent); font-style: normal; }
-  .hero-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.75; max-width: 420px; margin-bottom: 2rem; }
-  .hero-prices { display: flex; gap: 1.2rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; }
-  .price-main { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
-  .price-deal { background: #E8F5E9; color: #2E7D32; font-size: .88rem; font-weight: 700; padding: .4rem 1rem; border-radius: 20px; border: 1px solid #C8E6C9; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #fff; padding: .9rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: .95rem; transition: background .15s, transform .15s; display: inline-block; }
-  .btn-primary:hover { background: #cc4f10; transform: translateY(-2px); }
-  .btn-secondary { background: transparent; color: var(--dark); padding: .9rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: .95rem; border: 2px solid var(--border); transition: border-color .15s; display: inline-block; }
-  .btn-secondary:hover { border-color: var(--dark); }
-
-  /* HERO WATCH CLUSTER */
-  .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-  .hero-visual svg { width: 100%; max-width: 460px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12)); }
-
-  /* TICKER */
-  .ticker { background: var(--dark); padding: .9rem 0; overflow: hidden; white-space: nowrap; }
-  .ticker-inner { display: inline-flex; gap: 2.5rem; animation: ticker 20s linear infinite; }
-  .ticker-inner2 { display: inline-flex; gap: 2.5rem; animation: ticker 20s linear infinite; }
-  .t-item { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 2px; color: #fff; opacity: .55; }
-  .t-item.hi { color: var(--col-yellow); opacity: 1; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-100%); } }
-
-  /* PRODUCTS */
-  .products { padding: 5rem 2.5rem; max-width: 1120px; margin: 0 auto; }
-  .sec-label { font-size: .75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .4rem; }
-  .sec-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 2px; color: var(--dark); margin-bottom: .4rem; }
-  .sec-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; }
-  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
-  .pcard {
-    background: var(--card); border-radius: 20px; overflow: hidden;
-    border: 1.5px solid var(--border);
-    transition: transform .2s, box-shadow .2s;
-  }
-  .pcard:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.09); }
-  .pcard-visual {
-    padding: 2rem 1.5rem 1rem;
-    display: flex; justify-content: center; align-items: flex-end;
-    min-height: 200px;
-  }
-  .pcard-visual svg { width: 130px; filter: drop-shadow(0 8px 20px rgba(0,0,0,.15)); }
-  .pcard-body { padding: 0 1.25rem 1.5rem; }
-  .pcard-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 1px; color: var(--dark); margin-bottom: .25rem; }
-  .pcard-desc { color: var(--muted); font-size: .88rem; line-height: 1.55; margin-bottom: 1rem; }
-  .pcard-footer { display: flex; justify-content: space-between; align-items: center; }
-  .pcard-price { font-size: 1.15rem; font-weight: 700; color: var(--dark); }
-  .pcard-price small { font-size: .8rem; color: var(--muted); font-weight: 400; }
-  .pcard-btn { background: var(--dark); color: #fff; padding: .5rem 1.1rem; border-radius: 8px; font-size: .82rem; font-weight: 700; text-decoration: none; transition: background .15s; }
-  .pcard-btn:hover { background: var(--accent); }
-
-  /* FEATURES */
-  .features { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2.5rem; }
-  .features-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
-  .feat { text-align: center; }
-  .feat-icon { font-size: 2rem; margin-bottom: .8rem; }
-  .feat h3 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; color: var(--dark); }
-  .feat p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-
-  /* DEAL */
-  .deal-wrap { padding: 5rem 2.5rem; max-width: 1120px; margin: 0 auto; }
-  .deal-box {
-    background: var(--accent); border-radius: 24px;
-    padding: 4rem; display: grid;
-    grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-  }
-  .deal-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: #fff; line-height: 1; margin-bottom: 1rem; letter-spacing: 2px; }
-  .deal-box p { color: rgba(255,255,255,.8); line-height: 1.7; }
-  .deal-card { background: #fff; border-radius: 16px; padding: 2rem; text-align: center; }
-  .dc-label { font-size: .78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
-  .dc-price { font-family: 'Bebas Neue', sans-serif; font-size: 5.5rem; color: var(--accent); line-height: 1; }
-  .dc-sub { font-size: .9rem; color: var(--muted); margin: .2rem 0 1rem; }
-  .dc-save { background: #E8F5E9; color: #2E7D32; font-size: .85rem; font-weight: 700; padding: .45rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; border: 1px solid #C8E6C9; }
-
-  /* ORDER */
-  .order { padding: 5rem 2.5rem; max-width: 860px; margin: 0 auto; }
-  .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin: 3rem 0; }
-  .step { background: var(--card); border: 1.5px solid var(--border); border-radius: 16px; padding: 1.8rem 1.5rem; }
-  .step-n { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--border); line-height: 1; margin-bottom: .6rem; }
-  .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
-  .step p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-
-  /* SWISH */
-  .swish-card {
-    background: var(--card); border: 1.5px solid var(--border);
-    border-radius: 20px; padding: 2.5rem 2rem;
-    max-width: 440px; margin: 0 auto; text-align: center;
-  }
-  .swish-head { display: flex; align-items: center; justify-content: center; gap: .9rem; margin-bottom: 1.2rem; }
-  .swish-ico { width: 50px; height: 50px; border-radius: 13px; background: linear-gradient(135deg,#f4609e,#f90); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-  .swish-head h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; }
-  .swish-nr { font-size: 1.8rem; font-weight: 700; letter-spacing: 4px; background: var(--light); border-radius: 10px; padding: .75rem 1.5rem; border: 2px dashed #ccc; display: inline-block; margin: .5rem 0 1rem; }
-  .swish-note { color: var(--muted); font-size: .88rem; line-height: 1.7; }
-
-  footer { background: var(--dark); color: #555; text-align: center; padding: 2rem; font-size: .85rem; }
-  .foot-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: #fff; letter-spacing: 3px; margin-bottom: .4rem; }
-
-  @media(max-width:768px){
-    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
-    .hero-visual { order: -1; }
-    .hero-visual svg { max-width: 320px; }
-    .deal-box { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
-    .steps-grid { grid-template-columns: 1fr; }
-    nav { padding: 1rem 1.5rem; }
-    .nav-right a:not(.nav-cta) { display: none; }
-    .products, .deal-wrap, .order { padding: 3.5rem 1.5rem; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#E8601A;--dark:#181818;--light:#F8F7F4;--white:#ffffff;
+  --text:#1A1A1A;--muted:#777;--border:#EAEAE4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden}
+nav{background:var(--dark);padding:.9rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:3px;color:#fff;text-decoration:none}
+.logo em{color:var(--orange);font-style:normal}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem;font-weight:600;letter-spacing:.5px;transition:color .15s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--orange)!important;color:#fff!important;padding:.5rem 1.3rem;border-radius:8px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.3rem}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;max-width:1300px;margin:0 auto;padding:4rem 2.5rem;gap:3rem;align-items:center}
+.hero-tag{display:inline-block;background:#FFF0E6;color:var(--orange);font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:20px;margin-bottom:1.5rem;border:1px solid #ffd0a8}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7rem);line-height:.9;letter-spacing:2px;color:var(--dark);margin-bottom:1.2rem}
+.hero h1 em{color:var(--orange);font-style:normal;display:block}
+.slogan{font-size:1.05rem;font-weight:800;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem}
+.hero-desc{color:var(--muted);font-size:1rem;line-height:1.75;max-width:420px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .15s,background .15s;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:#cc4f10;transform:translateY(-2px)}
+.btn-secondary{background:transparent;color:var(--dark);border:2px solid var(--border)}
+.btn-secondary:hover{border-color:var(--dark)}
+.hero-img{border-radius:20px;overflow:hidden;aspect-ratio:1;background:#111}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.ticker{background:var(--orange);padding:.7rem 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;gap:2rem;animation:tick 22s linear infinite}
+.t{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:#fff;opacity:.85}
+.t.b{opacity:1}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.section{padding:5rem 2.5rem;max-width:1300px;margin:0 auto}
+.sec-label{font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:2px;color:var(--dark);margin-bottom:.5rem}
+.sec-sub{color:var(--muted);font-size:1rem;margin-bottom:3rem}
+.page{display:none}
+.page.active{display:block}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem}
+.pcard{background:var(--white);border-radius:16px;overflow:hidden;border:1.5px solid var(--border);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.09)}
+.pcard-img{aspect-ratio:1;overflow:hidden;background:#f5f5f5}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.pcard:hover .pcard-img img{transform:scale(1.04)}
+.pcard-body{padding:1.2rem 1.2rem 1.4rem}
+.pcard-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1px;color:var(--dark);margin-bottom:.25rem}
+.pcard-desc{color:var(--muted);font-size:.85rem;line-height:1.55;margin-bottom:1rem}
+.pcard-foot{display:flex;justify-content:space-between;align-items:center}
+.pcard-price{font-size:1.1rem;font-weight:700}
+.pcard-price small{font-size:.8rem;color:var(--muted);font-weight:400}
+.pcard-btn{background:var(--dark);color:#fff;padding:.45rem 1rem;border-radius:7px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .15s;cursor:pointer}
+.pcard-btn:hover{background:var(--orange)}
+.wide-card{background:var(--white);border-radius:16px;overflow:hidden;border:1.5px solid var(--border);display:grid;grid-template-columns:1.2fr 1fr;align-items:center;margin-top:1.5rem}
+.wide-card-img{overflow:hidden;height:100%;min-height:300px}
+.wide-card-img img{width:100%;height:100%;object-fit:cover}
+.wide-card-body{padding:2.5rem}
+.cat-banner{background:var(--dark);padding:4rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.cat-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,96,26,.15),transparent);pointer-events:none}
+.cat-banner h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:#fff;letter-spacing:3px;position:relative}
+.cat-banner h1 em{color:var(--orange);font-style:normal}
+.cat-banner p{color:#999;font-size:1rem;margin-top:.8rem;position:relative}
+.deal-strip{background:var(--orange);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.deal-strip h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:1px}
+.deal-strip p{color:rgba(255,255,255,.8);font-size:.9rem}
+.deal-strip .btn{background:#fff;color:var(--orange)}
+.deal-strip .btn:hover{background:#f5f5f5}
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0 4rem}
+.step{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem}
+.step-n{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--border);line-height:1;margin-bottom:.6rem}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.step p{font-size:.88rem;color:var(--muted);line-height:1.6}
+.swish-box{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;text-align:center}
+.swish-head{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
+.swish-ico{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,#f4609e,#f90);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.swish-nr{font-size:1.8rem;font-weight:700;letter-spacing:4px;background:var(--light);border-radius:10px;padding:.75rem 1.5rem;border:2px dashed #ccc;display:inline-block;margin:.5rem 0 1rem}
+.swish-note{color:var(--muted);font-size:.9rem;line-height:1.7}
+footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fff;letter-spacing:3px;margin-bottom:.2rem}
+.foot-logo em{color:var(--orange);font-style:normal}
+.foot-slogan{color:var(--orange);font-size:.8rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem}
+.price-box{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;text-align:center}
+.price-num{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;line-height:1}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:3rem 1.5rem;gap:2rem}
+  .hero-img{order:-1;aspect-ratio:4/3}
+  .wide-card{grid-template-columns:1fr}
+  .wide-card-img{min-height:240px}
+  .steps-row{grid-template-columns:1fr}
+  .section{padding:3.5rem 1.5rem}
+  .cat-banner{padding:3rem 1.5rem}
+  .deal-strip{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark);padding:1rem 2rem;flex-direction:column;gap:1rem;align-items:flex-start;border-top:1px solid #333}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+@media(max-width:600px){
+  .pgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:380px){
+  .pgrid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="logo">Mr <em>Watch</em></div>
-  <div class="nav-right">
-    <a href="#klockor">Klockor</a>
-    <a href="#bestall">Beställ</a>
-    <a href="#bestall" class="nav-cta">149 kr/st</a>
+  <a class="logo" onclick="showPage('home')">Mr <em>Watch</em></a>
+  <div class="nav-links" id="navLinks">
+    <a onclick="showPage('home')" id="nav-home" class="active">Hem</a>
+    <a onclick="showPage('watches')" id="nav-watches">Klockor</a>
+    <a onclick="showPage('belts')" id="nav-belts">Skärp</a>
+    <a onclick="showPage('wallets')" id="nav-wallets">Plånböcker</a>
+    <a onclick="showPage('order')" class="nav-cta">Beställ</a>
   </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
-<section style="background:#fff; border-bottom:1px solid var(--border);">
-  <div class="hero">
-    <div>
-      <div class="hero-tag">Ny kollektion – 4 färger</div>
-      <h1>BYTA STIL<br>VARJE <em>DAG</em></h1>
-      <p class="hero-desc">Silikonklockor med utbytbara armband. Byt färg efter humör, tillfälle och outfit – på några sekunder.</p>
-      <div class="hero-prices">
-        <div class="price-main">149 kr / st</div>
-        <div class="price-deal">3 för 299 kr &nbsp;– spara 148 kr</div>
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section style="background:#fff;border-bottom:1px solid var(--border)">
+    <div class="hero">
+      <div>
+        <div class="hero-tag">Klockor · Skärp · Plånböcker i Silikon</div>
+        <h1>COLOR<br><em>YOUR</em><br>LIFE</h1>
+        <p class="slogan">Mr Watch – Färg för varje tillfälle</p>
+        <p class="hero-desc">Utbytbara silikonklockor, färgglada skärp och smarta plånböcker. Matcha, mixa och byt stil efter humör.</p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" onclick="showPage('watches')">Se klockorna</a>
+          <a class="btn btn-secondary" onclick="showPage('order')">Beställ med Swish</a>
+        </div>
       </div>
-      <div class="hero-btns">
-        <a href="#bestall" class="btn-primary">Beställ med Swish</a>
-        <a href="#klockor" class="btn-secondary">Se alla färger</a>
-      </div>
+      <div class="hero-img"><img src="img/hero.jpg" alt="Mr Watch – Color Your Life"></div>
     </div>
-    <div class="hero-visual">
-      <!-- HERO CLUSTER: 4 watches arranged together -->
-      <svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg">
-        <!-- BLUE watch top-left -->
-        <g transform="translate(30,30) rotate(-15,80,130)">
-          <rect x="58" y="10" width="44" height="22" rx="6" fill="#1A44BB"/>
-          <rect x="20" y="30" width="120" height="160" rx="28" fill="#2255CC"/>
-          <rect x="34" y="44" width="92" height="132" rx="18" fill="#1A44BB"/>
-          <rect x="42" y="52" width="76" height="116" rx="14" fill="#f0f4ff"/>
-          <circle cx="80" cy="110" r="34" fill="#fff" opacity=".9"/>
-          <line x1="80" y1="110" x2="80" y2="84" stroke="#2255CC" stroke-width="3" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="100" y2="118" stroke="#2255CC" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="80" cy="110" r="4" fill="#2255CC"/>
-          <rect x="58" y="188" width="44" height="22" rx="6" fill="#1A44BB"/>
-        </g>
-        <!-- YELLOW watch top-right -->
-        <g transform="translate(250,20) rotate(12,80,130)">
-          <rect x="58" y="10" width="44" height="22" rx="6" fill="#D4A800"/>
-          <rect x="20" y="30" width="120" height="160" rx="28" fill="#F5C400"/>
-          <rect x="34" y="44" width="92" height="132" rx="18" fill="#D4A800"/>
-          <rect x="42" y="52" width="76" height="116" rx="14" fill="#fffbe6"/>
-          <circle cx="80" cy="110" r="34" fill="#fff" opacity=".9"/>
-          <line x1="80" y1="110" x2="95" y2="86" stroke="#D4A800" stroke-width="3" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="100" y2="120" stroke="#D4A800" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="80" cy="110" r="4" fill="#D4A800"/>
-          <rect x="58" y="188" width="44" height="22" rx="6" fill="#D4A800"/>
-        </g>
-        <!-- ORANGE watch bottom-left -->
-        <g transform="translate(60,230) rotate(-8,80,130)">
-          <rect x="58" y="10" width="44" height="22" rx="6" fill="#C44A0E"/>
-          <rect x="20" y="30" width="120" height="160" rx="28" fill="#E8601A"/>
-          <rect x="34" y="44" width="92" height="132" rx="18" fill="#C44A0E"/>
-          <rect x="42" y="52" width="76" height="116" rx="14" fill="#fff5ee"/>
-          <circle cx="80" cy="110" r="34" fill="#fff" opacity=".9"/>
-          <line x1="80" y1="110" x2="68" y2="82" stroke="#E8601A" stroke-width="3" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="104" y2="114" stroke="#E8601A" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="80" cy="110" r="4" fill="#E8601A"/>
-          <rect x="58" y="188" width="44" height="22" rx="6" fill="#C44A0E"/>
-        </g>
-        <!-- LIGHT BLUE watch bottom-right -->
-        <g transform="translate(270,220) rotate(10,80,130)">
-          <rect x="58" y="10" width="44" height="22" rx="6" fill="#4A96CC"/>
-          <rect x="20" y="30" width="120" height="160" rx="28" fill="#6AB4E8"/>
-          <rect x="34" y="44" width="92" height="132" rx="18" fill="#4A96CC"/>
-          <rect x="42" y="52" width="76" height="116" rx="14" fill="#eef7ff"/>
-          <circle cx="80" cy="110" r="34" fill="#fff" opacity=".95"/>
-          <text x="80" y="94" text-anchor="middle" font-size="9" fill="#4A96CC" font-family="serif" font-weight="bold">12</text>
-          <text x="80" y="132" text-anchor="middle" font-size="9" fill="#4A96CC" font-family="serif" font-weight="bold">6</text>
-          <line x1="80" y1="110" x2="80" y2="86" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="97" y2="116" stroke="#555" stroke-width="2" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="72" y2="130" stroke="#E8601A" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="80" cy="110" r="3" fill="#333"/>
-          <rect x="58" y="188" width="44" height="22" rx="6" fill="#4A96CC"/>
-        </g>
-        <!-- shadow blobs -->
-        <ellipse cx="110" cy="215" rx="55" ry="12" fill="#00000010"/>
-        <ellipse cx="330" cy="205" rx="55" ry="12" fill="#00000010"/>
-      </svg>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">SKÄRP</span><span class="t b">PLÅNBÖCKER</span><span class="t">149 KR / ST</span><span class="t b">UTBYTBARA ARMBAND</span><span class="t">3 FÖR 299 KR</span>
+      <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">SKÄRP</span><span class="t b">PLÅNBÖCKER</span><span class="t">149 KR / ST</span><span class="t b">UTBYTBARA ARMBAND</span><span class="t">3 FÖR 299 KR</span>
     </div>
   </div>
-</section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div style="display:inline-flex;gap:2.5rem;">
-    <span class="t-item hi">MR WATCH</span><span class="t-item">SILIKONARMBAND</span><span class="t-item hi">149 KR / ST</span><span class="t-item">4 FÄRGER</span><span class="t-item hi">3 FÖR 299 KR</span><span class="t-item">UTBYTBARA ARMBAND</span>
-    <span class="t-item hi">MR WATCH</span><span class="t-item">SILIKONARMBAND</span><span class="t-item hi">149 KR / ST</span><span class="t-item">4 FÄRGER</span><span class="t-item hi">3 FÖR 299 KR</span><span class="t-item">UTBYTBARA ARMBAND</span>
-    <span class="t-item hi">MR WATCH</span><span class="t-item">SILIKONARMBAND</span><span class="t-item hi">149 KR / ST</span><span class="t-item">4 FÄRGER</span><span class="t-item hi">3 FÖR 299 KR</span><span class="t-item">UTBYTBARA ARMBAND</span>
+  <div class="section">
+    <div class="sec-label">Populärast</div>
+    <div class="sec-title">Klockor</div>
+    <p class="sec-sub">Våra ikoniska silikonklockor – byt armband på sekunder. <a onclick="showPage('watches')" style="color:var(--orange);font-weight:700;cursor:pointer">Se hela kollektionen →</a></p>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/watch-tree.jpg" alt="Kvadratserien"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Kvadratserien</div>
+          <p class="pcard-desc">Tunna, lekfulla och färgsprakande. Finns i massor av färger med utbytbara armband.</p>
+          <div class="pcard-foot"><div class="pcard-price">149 kr <small>/ st</small></div><a class="pcard-btn" onclick="showPage('watches')">Se alla</a></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/watch-round-5pack.jpg" alt="Rundserien"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Rundserien</div>
+          <p class="pcard-desc">Sportig design med vridbar bezel. Klassisk look i nya starka färger.</p>
+          <div class="pcard-foot"><div class="pcard-price">149 kr <small>/ st</small></div><a class="pcard-btn" onclick="showPage('watches')">Se alla</a></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="img/watch-white-mix.jpg" alt="Mix och match"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Mix &amp; Match</div>
+          <p class="pcard-desc">Byt urtavla och armband – skapa din helt egna unika kombination.</p>
+          <div class="pcard-foot"><div class="pcard-price">3 för 299 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 2.5rem">
+    <div style="max-width:1300px;margin:0 auto">
+      <div class="sec-label">Komplettera stilen</div>
+      <div class="sec-title">Hela sortimentet</div>
+      <p class="sec-sub">Klockor, skärp och plånböcker – allt i matchande silikon.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div class="pcard" style="cursor:pointer" onclick="showPage('belts')">
+          <div class="pcard-img"><img src="img/belt-green.jpg" alt="Silikonskärp"></div>
+          <div class="pcard-body">
+            <div class="pcard-name">Silikonskärp</div>
+            <p class="pcard-desc">Mjuka och hållbara i massor av färger. Matchar klockorna perfekt.</p>
+            <div class="pcard-foot"><div class="pcard-price">149 kr <small>/ st</small></div><a class="pcard-btn" onclick="showPage('belts')">Se alla →</a></div>
+          </div>
+        </div>
+        <div class="pcard" style="cursor:pointer" onclick="showPage('wallets')">
+          <div class="pcard-img"><img src="img/wallet-multi.jpg" alt="Silikonplånböcker"></div>
+          <div class="pcard-body">
+            <div class="pcard-name">Silikonplånböcker</div>
+            <p class="pcard-desc">Slim, smidig och vattentålig. Finns i alla regnbågens färger.</p>
+            <div class="pcard-foot"><div class="pcard-price">149 kr <small>/ st</small></div><a class="pcard-btn" onclick="showPage('wallets')">Se alla →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deal-strip">
+    <div><h3>3 valfria produkter – 299 kr</h3><p>Mixa klockor, skärp och plånböcker hur du vill. Spara 148 kr.</p></div>
+    <a class="btn" onclick="showPage('order')">Beställ nu</a>
   </div>
 </div>
 
-<!-- PRODUCTS -->
-<section class="products" id="klockor">
-  <div class="sec-label">Kollektionen</div>
-  <div class="sec-title">Välj din färg</div>
-  <p class="sec-sub">Alla armband är utbytbara – köp flera och mixa hur du vill.</p>
-  <div class="grid4">
+<!-- WATCHES -->
+<div id="page-watches" class="page">
+  <div class="cat-banner"><h1>KLOCK<em>OR</em></h1><p>Kvadratiska &amp; runda silikonklockor – byt stil på sekunder</p></div>
+  <div class="section">
+    <div class="sec-label">Kvadratserien</div>
+    <div class="sec-title">Tunna &amp; Färgglada</div>
+    <p class="sec-sub">Ikonisk fyrkantig urtavla i silikon. Armbandsbytet tar bara sekunder.</p>
+    <div class="pgrid">
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-pink-sq.jpg" alt="Rosa"></div><div class="pcard-body"><div class="pcard-name">Rosa</div><p class="pcard-desc">Söt och feminin. Perfekt till det mesta.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-purple-sq.jpg" alt="Lila"></div><div class="pcard-body"><div class="pcard-name">Lila</div><p class="pcard-desc">Djup och distinkt. En klassiker i kollektionen.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-magenta-sq.jpg" alt="Magenta"></div><div class="pcard-body"><div class="pcard-name">Magenta</div><p class="pcard-desc">Knallrosa och oemotståndlig. Syns på långt håll.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-green-sq.jpg" alt="Neongrön"></div><div class="pcard-body"><div class="pcard-name">Neongrön</div><p class="pcard-desc">Fräsch och energisk. Lyser upp vilken outfit.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-brown-sq.jpg" alt="Brun"></div><div class="pcard-body"><div class="pcard-name">Brun</div><p class="pcard-desc">Varm och jordnära. Passar höst och vinter.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/watch-white-sq.jpg" alt="Vit"></div><div class="pcard-body"><div class="pcard-name">Vit</div><p class="pcard-desc">Ren och stilren. En favorit för mix &amp; match.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+    </div>
 
-    <!-- BLUE -->
-    <div class="pcard">
-      <div class="pcard-visual" style="background:linear-gradient(160deg,#e8eeff,#f5f7ff);">
-        <svg viewBox="0 0 130 220" xmlns="http://www.w3.org/2000/svg">
-          <rect x="43" y="2" width="44" height="24" rx="7" fill="#1A44BB"/>
-          <rect x="10" y="24" width="110" height="152" rx="26" fill="#2255CC"/>
-          <rect x="22" y="36" width="86" height="128" rx="18" fill="#1A44BB"/>
-          <rect x="30" y="44" width="70" height="112" rx="14" fill="#dce8ff"/>
-          <circle cx="65" cy="100" r="32" fill="#fff" opacity=".95"/>
-          <line x1="65" y1="100" x2="65" y2="76" stroke="#2255CC" stroke-width="3" stroke-linecap="round"/>
-          <line x1="65" y1="100" x2="84" y2="108" stroke="#2255CC" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="65" cy="100" r="4" fill="#2255CC"/>
-          <rect x="43" y="174" width="44" height="24" rx="7" fill="#1A44BB"/>
-        </svg>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-name">Blå</div>
-        <p class="pcard-desc">Klassisk och stilren. Passar till allt från vardagen till festen.</p>
-        <div class="pcard-footer">
-          <div class="pcard-price">149 kr <small>/ st</small></div>
-          <a href="#bestall" class="pcard-btn">Beställ</a>
-        </div>
+    <div class="wide-card">
+      <div class="wide-card-img"><img src="img/watch-white-mix.jpg" alt="Mix och match"></div>
+      <div class="wide-card-body">
+        <div class="sec-label">Tips</div>
+        <div class="pcard-name" style="font-size:2rem;margin-bottom:.8rem">Mix &amp; Match</div>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">Det roligaste med Mr Watch är att kombinera. Byt armbandet på din vita klocka mot lila, rosa eller grön urtavla – eller tvärtom. Köp tre valfria färger för 299 kr och ha alltid rätt look.</p>
+        <a class="btn btn-primary" onclick="showPage('order')">Beställ 3-pack – 299 kr</a>
       </div>
     </div>
 
-    <!-- YELLOW -->
-    <div class="pcard">
-      <div class="pcard-visual" style="background:linear-gradient(160deg,#fff9d6,#fffef0);">
-        <svg viewBox="0 0 130 220" xmlns="http://www.w3.org/2000/svg">
-          <rect x="43" y="2" width="44" height="24" rx="7" fill="#C9A000"/>
-          <rect x="10" y="24" width="110" height="152" rx="26" fill="#F5C400"/>
-          <rect x="22" y="36" width="86" height="128" rx="18" fill="#C9A000"/>
-          <rect x="30" y="44" width="70" height="112" rx="14" fill="#fffbe0"/>
-          <circle cx="65" cy="100" r="32" fill="#fff" opacity=".95"/>
-          <line x1="65" y1="100" x2="78" y2="78" stroke="#C9A000" stroke-width="3" stroke-linecap="round"/>
-          <line x1="65" y1="100" x2="86" y2="110" stroke="#C9A000" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="65" cy="100" r="4" fill="#C9A000"/>
-          <rect x="43" y="174" width="44" height="24" rx="7" fill="#C9A000"/>
-        </svg>
+    <div style="margin-top:4rem">
+      <div class="sec-label">Rundserien</div>
+      <div class="sec-title">Sportig &amp; Klassisk</div>
+      <p class="sec-sub">Med vridbar bezel och full urtavla – lite mer klocka, lika mycket färg.</p>
+      <div class="pgrid">
+        <div class="pcard"><div class="pcard-img"><img src="img/watch-red-round.jpg" alt="Röd"></div><div class="pcard-body"><div class="pcard-name">Röd</div><p class="pcard-desc">Stark och bestämd. Sportig look med maximal färg.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+        <div class="pcard"><div class="pcard-img"><img src="img/watch-green-round.jpg" alt="Neongrön"></div><div class="pcard-body"><div class="pcard-name">Neongrön</div><p class="pcard-desc">Neongrön energi i sportig tappning.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+        <div class="pcard"><div class="pcard-img"><img src="img/watch-blue-round.jpg" alt="Blå"></div><div class="pcard-body"><div class="pcard-name">Blå</div><p class="pcard-desc">Klassisk blå – aldrig fel, alltid snygg.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+        <div class="pcard"><div class="pcard-img"><img src="img/watch-blue-white-round.jpg" alt="Blå/Vit"></div><div class="pcard-body"><div class="pcard-name">Blå / Vit Mix</div><p class="pcard-desc">Tvåfärgad kombination – dubbelt så kul.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
       </div>
-      <div class="pcard-body">
-        <div class="pcard-name">Gul</div>
-        <p class="pcard-desc">Solklar och energisk. Lyser upp vilken outfit som helst.</p>
-        <div class="pcard-footer">
-          <div class="pcard-price">149 kr <small>/ st</small></div>
-          <a href="#bestall" class="pcard-btn">Beställ</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ORANGE -->
-    <div class="pcard">
-      <div class="pcard-visual" style="background:linear-gradient(160deg,#ffe8d8,#fff5ef);">
-        <svg viewBox="0 0 130 220" xmlns="http://www.w3.org/2000/svg">
-          <rect x="43" y="2" width="44" height="24" rx="7" fill="#C04410"/>
-          <rect x="10" y="24" width="110" height="152" rx="26" fill="#E8601A"/>
-          <rect x="22" y="36" width="86" height="128" rx="18" fill="#C04410"/>
-          <rect x="30" y="44" width="70" height="112" rx="14" fill="#fff0e6"/>
-          <circle cx="65" cy="100" r="32" fill="#fff" opacity=".95"/>
-          <line x1="65" y1="100" x2="55" y2="75" stroke="#E8601A" stroke-width="3" stroke-linecap="round"/>
-          <line x1="65" y1="100" x2="88" y2="106" stroke="#E8601A" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="65" cy="100" r="4" fill="#E8601A"/>
-          <rect x="43" y="174" width="44" height="24" rx="7" fill="#C04410"/>
-        </svg>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-name">Orange</div>
-        <p class="pcard-desc">Vågad och energifull. För dig som inte är rädd att synas.</p>
-        <div class="pcard-footer">
-          <div class="pcard-price">149 kr <small>/ st</small></div>
-          <a href="#bestall" class="pcard-btn">Beställ</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- LIGHT BLUE -->
-    <div class="pcard">
-      <div class="pcard-visual" style="background:linear-gradient(160deg,#ddf0ff,#f0f9ff);">
-        <svg viewBox="0 0 130 220" xmlns="http://www.w3.org/2000/svg">
-          <rect x="43" y="2" width="44" height="24" rx="7" fill="#3A86C8"/>
-          <rect x="10" y="24" width="110" height="152" rx="26" fill="#6AB4E8"/>
-          <rect x="22" y="36" width="86" height="128" rx="18" fill="#3A86C8"/>
-          <rect x="30" y="44" width="70" height="112" rx="14" fill="#e8f5ff"/>
-          <circle cx="65" cy="100" r="32" fill="#fff" opacity=".97"/>
-          <text x="65" y="82" text-anchor="middle" font-size="9" fill="#3A86C8" font-family="Georgia,serif" font-weight="bold">12</text>
-          <text x="65" y="122" text-anchor="middle" font-size="9" fill="#3A86C8" font-family="Georgia,serif" font-weight="bold">6</text>
-          <text x="88" y="103" text-anchor="middle" font-size="8" fill="#3A86C8" font-family="Georgia,serif">3</text>
-          <text x="42" y="103" text-anchor="middle" font-size="8" fill="#3A86C8" font-family="Georgia,serif">9</text>
-          <line x1="65" y1="100" x2="65" y2="77" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="65" y1="100" x2="84" y2="108" stroke="#555" stroke-width="2" stroke-linecap="round"/>
-          <line x1="65" y1="100" x2="58" y2="122" stroke="#E8601A" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="65" cy="100" r="3.5" fill="#222"/>
-          <rect x="43" y="174" width="44" height="24" rx="7" fill="#3A86C8"/>
-        </svg>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-name">Ljusblå</div>
-        <p class="pcard-desc">Lugn och fräsch. Med analog urtavla och röd sekundvisare.</p>
-        <div class="pcard-footer">
-          <div class="pcard-price">149 kr <small>/ st</small></div>
-          <a href="#bestall" class="pcard-btn">Beställ</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features">
-  <div class="features-inner">
-    <div class="feat"><div class="feat-icon">🔄</div><h3>Utbytbara armband</h3><p>Byt armband på sekunder – ett klick och ny färg.</p></div>
-    <div class="feat"><div class="feat-icon">💧</div><h3>Mjukt silikon</h3><p>Hudvänligt och bekvämt material för alla åldrar.</p></div>
-    <div class="feat"><div class="feat-icon">🎨</div><h3>4 färger</h3><p>Blå, gul, orange och ljusblå – mixa hur du vill.</p></div>
-    <div class="feat"><div class="feat-icon">🚀</div><h3>Snabb leverans</h3><p>Skickas direkt när betalningen är bekräftad.</p></div>
-  </div>
-</section>
-
-<!-- DEAL -->
-<section class="deal-wrap">
-  <div class="deal-box">
-    <div>
-      <h2>BÄSTA ERBJUDANDET</h2>
-      <p>Köp tre klockor i valfria färger och betala bara 299 kr. Perfekt om du vill ha en för varje dag – eller som present.</p>
-    </div>
-    <div class="deal-card">
-      <div class="dc-label">3 klockor – valfri färg</div>
-      <div class="dc-price">299</div>
-      <div class="dc-sub">kronor totalt</div>
-      <div class="dc-save">Du sparar 148 kr</div>
-      <a href="#bestall" class="btn-primary" style="display:block;text-align:center;">Beställ 3-pack</a>
     </div>
   </div>
-</section>
+  <div class="deal-strip"><div><h3>3 klockor – 299 kr</h3><p>Valfria färger och serier. Spara 148 kr.</p></div><a class="btn" onclick="showPage('order')">Beställ nu</a></div>
+</div>
+
+<!-- BELTS -->
+<div id="page-belts" class="page">
+  <div class="cat-banner"><h1>SKÄRP</h1><p>Mjuka silikonskärp i massor av färger</p></div>
+  <div class="section">
+    <div class="sec-label">Kollektionen</div>
+    <div class="sec-title">Silikonskärp</div>
+    <p class="sec-sub">Hållbart och hudvänligt silikon med spänne. Matchar perfekt med klockorna.</p>
+    <div class="pgrid">
+      <div class="pcard"><div class="pcard-img"><img src="img/belt-pink.jpg" alt="Rosa"></div><div class="pcard-body"><div class="pcard-name">Rosa</div><p class="pcard-desc">Lekfull rosa med genomskinligt spänne.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/belt-amaranth.jpg" alt="Amarant"></div><div class="pcard-body"><div class="pcard-name">Amarant</div><p class="pcard-desc">Djuprosa med kraftfull personlighet.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/belt-purple.jpg" alt="Lila"></div><div class="pcard-body"><div class="pcard-name">Lila</div><p class="pcard-desc">Lila bälte med rosa spänne – perfekt kontrast.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/belt-green.jpg" alt="Grön"></div><div class="pcard-body"><div class="pcard-name">Grön</div><p class="pcard-desc">Friskt grön med genomskinligt spänne.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/belt-black.jpg" alt="Svart"></div><div class="pcard-body"><div class="pcard-name">Svart</div><p class="pcard-desc">Matte svart – stilren och passar allt.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+    </div>
+    <div class="wide-card">
+      <div class="wide-card-img"><img src="img/belt-amaranth.jpg" alt="Matcha med klockan"></div>
+      <div class="wide-card-body">
+        <div class="sec-label">Style tips</div>
+        <div class="pcard-name" style="font-size:2rem;margin-bottom:.8rem">Matcha med klockan</div>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">Välj ett skärp i samma färg som armbandet – eller välj en kontrasterande färg för att göra outfiten mer intressant. Med Mr Watch handlar det om att ha kul med färg.</p>
+        <a class="btn btn-primary" onclick="showPage('order')">Beställ skärp</a>
+      </div>
+    </div>
+  </div>
+  <div class="deal-strip"><div><h3>3 valfria produkter – 299 kr</h3><p>Mixa klockor, skärp och plånböcker fritt.</p></div><a class="btn" onclick="showPage('order')">Beställ nu</a></div>
+</div>
+
+<!-- WALLETS -->
+<div id="page-wallets" class="page">
+  <div class="cat-banner"><h1>PLÅN<em>BÖCKER</em></h1><p>Slim silikonplånbok – vattentålig och färgstark</p></div>
+  <div class="section">
+    <div class="sec-label">Kollektionen</div>
+    <div class="sec-title">Silikonplånböcker</div>
+    <p class="sec-sub">Tunn, lätt och vattentålig. Plats för kort och sedlar – i alla regnbågens färger.</p>
+    <div class="pgrid">
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-neonpink.jpg" alt="Neonrosa"></div><div class="pcard-body"><div class="pcard-name">Neonrosa</div><p class="pcard-desc">Svår att missa i väskan.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-neonyellow.jpg" alt="Neongul"></div><div class="pcard-body"><div class="pcard-name">Neongul</div><p class="pcard-desc">Solklar och omöjlig att glömma.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-neongreen.jpg" alt="Neongrön"></div><div class="pcard-body"><div class="pcard-name">Neongrön</div><p class="pcard-desc">Frisch och energisk – färg för livet.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-orange.jpg" alt="Orange"></div><div class="pcard-body"><div class="pcard-name">Orange</div><p class="pcard-desc">Varm och välkomnande. En personlig favorit.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-red.jpg" alt="Röd"></div><div class="pcard-body"><div class="pcard-name">Röd</div><p class="pcard-desc">Klassisk röd med maximal attityd.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-rose.jpg" alt="Rosa"></div><div class="pcard-body"><div class="pcard-name">Rosa</div><p class="pcard-desc">Mjuk rosa – elegant och lekfull.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-purple.jpg" alt="Lila"></div><div class="pcard-body"><div class="pcard-name">Lila</div><p class="pcard-desc">Djup och distinkt. Matchar den lila klockan.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-lightblue.jpg" alt="Ljusblå"></div><div class="pcard-body"><div class="pcard-name">Ljusblå</div><p class="pcard-desc">Lugn och fräsch – sommar hela året.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-army.jpg" alt="Army"></div><div class="pcard-body"><div class="pcard-name">Army</div><p class="pcard-desc">Jordnära och tålig. Passar äventyraren.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-black.jpg" alt="Svart"></div><div class="pcard-body"><div class="pcard-name">Svart</div><p class="pcard-desc">Tidlös och diskret. Passar alla tillfällen.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-multi.jpg" alt="Multicolor"></div><div class="pcard-body"><div class="pcard-name">Multicolor</div><p class="pcard-desc">Kan inte välja? Ta alla färger på en gång!</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+      <div class="pcard"><div class="pcard-img"><img src="img/wallet-inside.jpg" alt="Insidan"></div><div class="pcard-body"><div class="pcard-name">Insidan</div><p class="pcard-desc">Plats för kort och sedlar. Slim och vattentålig.</p><div class="pcard-foot"><div class="pcard-price">149 kr</div><a class="pcard-btn" onclick="showPage('order')">Beställ</a></div></div></div>
+    </div>
+  </div>
+  <div class="deal-strip"><div><h3>3 valfria produkter – 299 kr</h3><p>Mixa klockor, skärp och plånböcker fritt.</p></div><a class="btn" onclick="showPage('order')">Beställ nu</a></div>
+</div>
 
 <!-- ORDER -->
-<section class="order" id="bestall">
-  <div class="sec-label">Beställning</div>
-  <div class="sec-title">Så här beställer du</div>
-  <p class="sec-sub">Enkelt och snabbt – inga konton, inga krångel.</p>
-  <div class="steps-grid">
-    <div class="step">
-      <div class="step-n">01</div>
-      <h3>Välj färger</h3>
-      <p>Bestäm vilka färger du vill ha. En för 149 kr, tre för 299 kr.</p>
+<div id="page-order" class="page">
+  <div class="cat-banner"><h1>BE<em>STÄLL</em></h1><p>Enkelt, snabbt och utan krångel – betala med Swish</p></div>
+  <div class="section" style="max-width:860px">
+    <div class="sec-label">Priser</div>
+    <div class="sec-title">Vad kostar det?</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem">
+      <div class="price-box"><div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--muted);margin-bottom:.3rem">STYCKPRIS</div><div class="price-num" style="color:var(--dark)">149</div><div style="color:var(--muted);font-size:.9rem">kronor per produkt</div></div>
+      <div style="background:var(--orange);border-radius:16px;padding:2rem;text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:rgba(255,255,255,.7);margin-bottom:.3rem">3-PACK ERBJUDANDE</div><div class="price-num" style="color:#fff">299</div><div style="color:rgba(255,255,255,.8);font-size:.9rem">kronor – spara 148 kr</div></div>
     </div>
-    <div class="step">
-      <div class="step-n">02</div>
-      <h3>Swisha &amp; meddela</h3>
-      <p>Swisha rätt belopp och ange dina önskade färger och adress i meddelandet.</p>
+    <div class="sec-label">Så här gör du</div>
+    <div class="sec-title">Tre enkla steg</div>
+    <div class="steps-row">
+      <div class="step"><div class="step-n">01</div><h3>Välj produkter</h3><p>Bestäm vilka färger och produkter du vill ha. En för 149 kr, tre för 299 kr.</p></div>
+      <div class="step"><div class="step-n">02</div><h3>Swisha &amp; meddela</h3><p>Swisha rätt belopp och ange produkter, färger och leveransadress i meddelandet.</p></div>
+      <div class="step"><div class="step-n">03</div><h3>Vi skickar</h3><p>Vi bekräftar din order via SMS och skickar direkt.</p></div>
     </div>
-    <div class="step">
-      <div class="step-n">03</div>
-      <h3>Vi skickar</h3>
-      <p>Vi bekräftar via SMS och skickar din beställning omgående.</p>
+    <div class="swish-box">
+      <div class="swish-head"><div class="swish-ico">💸</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1px">Betala med Swish</h3></div>
+      <div class="swish-nr">XXX XXX XX XX</div>
+      <p class="swish-note">Ange produkter, färger och leveransadress i meddelandefältet.<br>Vi bekräftar via SMS så snart betalningen är mottagen.</p>
     </div>
   </div>
-
-  <div class="swish-card">
-    <div class="swish-head">
-      <div class="swish-ico">💸</div>
-      <h3>Betala med Swish</h3>
-    </div>
-    <div class="swish-nr">XXX XXX XX XX</div>
-    <p class="swish-note">Ange dina önskade färger + leveransadress i meddelandet.<br>Vi svarar och bekräftar via SMS.</p>
-  </div>
-</section>
+</div>
 
 <footer>
-  <div class="foot-logo">Mr Watch</div>
+  <div class="foot-logo">Mr <em>Watch</em></div>
+  <div class="foot-slogan">Color Your Life</div>
   <p>&copy; 2025 Mr Watch – Alla rättigheter förbehållna.</p>
 </footer>
 
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const n=document.getElementById('nav-'+id);
+  if(n)n.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 </body>
 </html>
