@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sverige i VM 2026 – Matcher, tider & trupp | Mr Watch</title>
+<meta name="description" content="Allt om Sverige i fotbolls-VM 2026. Matchtider, motståndare, trupp och grupp F. Följ Blågult i VM – och bär Sverige på handleden med Mr Watch.">
+<meta name="keywords" content="Sverige VM 2026, fotbolls-VM 2026, Sverige matcher VM, Sverige Tunisien, Sverige Nederländerna, Sverige Japan, grupp F VM 2026, VM tider Sverige, blågult VM, Viktor Gyökeres VM, Alexander Isak VM, VM fotboll 2026, supporterklocka VM, blågul klocka">
+<link rel="canonical" href="https://mrwatch.se/vm">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Sverige i VM 2026 – Matcher, tider & trupp">
+<meta property="og:description" content="Allt om Sverige i fotbolls-VM 2026. Matchtider, motståndare och trupp. Följ Blågult!">
+<meta property="og:url" content="https://mrwatch.se/vm">
+<meta property="og:type" content="website">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#006AA7;--yellow:#FECC02;
+  --orange:#E8601A;--dark:#181818;--light:#F0F4F8;--white:#fff;
+  --text:#1A1A1A;--muted:#666;--border:#DDEAF5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--dark);padding:.9rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:3px;color:#fff;text-decoration:none}
+.logo em{color:var(--orange);font-style:normal}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem;font-weight:600;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--yellow);color:var(--blue)!important;padding:.5rem 1.3rem;border-radius:8px;font-weight:800!important}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.3rem}
+.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+
+/* HERO */
+.vm-hero{
+  background:var(--blue);
+  padding:5rem 2.5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:5px solid var(--yellow);
+}
+.vm-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(254,204,2,.12),transparent 60%),
+             radial-gradient(ellipse at 70% 50%,rgba(254,204,2,.08),transparent 60%);
+}
+.vm-hero-inner{position:relative;max-width:800px;margin:0 auto}
+.vm-flag-big{font-size:4rem;margin-bottom:1rem;display:block}
+.vm-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,7rem);color:#fff;letter-spacing:3px;line-height:.9;margin-bottom:1rem}
+.vm-hero h1 em{color:var(--yellow);font-style:normal}
+.vm-hero-sub{color:rgba(255,255,255,.8);font-size:1.1rem;line-height:1.7;margin-bottom:2rem;max-width:560px;margin-left:auto;margin-right:auto}
+.vm-hero-cta{background:var(--yellow);color:var(--blue);font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;padding:.9rem 2.5rem;border-radius:10px;text-decoration:none;display:inline-block;transition:transform .15s}
+.vm-hero-cta:hover{transform:translateY(-3px)}
+
+/* MATCH CARDS */
+.matches-section{padding:5rem 2.5rem;max-width:900px;margin:0 auto}
+.sec-label{font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:2px;color:var(--dark);margin-bottom:.5rem}
+.sec-sub{color:var(--muted);font-size:1rem;margin-bottom:3rem}
+
+.match-card{background:var(--white);border-radius:20px;border:2px solid var(--border);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s}
+.match-card:hover{box-shadow:0 8px 30px rgba(0,106,167,.12)}
+.match-header{background:var(--blue);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.match-header .match-num{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:rgba(255,255,255,.6)}
+.match-header .match-status{background:var(--yellow);color:var(--blue);font-size:.75rem;font-weight:800;padding:.25rem .8rem;border-radius:20px;letter-spacing:1px}
+.match-body{padding:2rem 1.5rem}
+.match-teams{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:1.5rem}
+.team{text-align:center}
+.team-flag{font-size:3rem;display:block;margin-bottom:.4rem}
+.team-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1px;color:var(--dark)}
+.team-name.sweden{color:var(--blue)}
+.vs{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--border);letter-spacing:2px}
+.match-info{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid var(--border);padding-top:1.5rem}
+.match-info-item{text-align:center}
+.match-info-label{font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.match-info-value{font-size:1rem;font-weight:700;color:var(--dark)}
+.match-info-value.time{color:var(--blue);font-size:1.2rem}
+.match-tip{background:#F0F8FF;border-left:3px solid var(--blue);padding:.8rem 1rem;margin-top:1rem;border-radius:0 8px 8px 0;font-size:.88rem;color:var(--muted);line-height:1.6}
+.match-tip strong{color:var(--dark)}
+
+/* OPPONENT INFO */
+.opponents{padding:0 2.5rem 5rem;max-width:900px;margin:0 auto}
+.opp-card{background:var(--white);border-radius:20px;border:2px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.opp-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem}
+.opp-flag{font-size:2.5rem}
+.opp-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1px;color:var(--dark)}
+.opp-sub{color:var(--muted);font-size:.85rem}
+.opp-body p{color:var(--muted);font-size:.92rem;line-height:1.75}
+.opp-tags{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.opp-tag{background:var(--light);color:var(--blue);font-size:.78rem;font-weight:700;padding:.3rem .8rem;border-radius:20px;border:1px solid var(--border)}
+
+/* SQUAD */
+.squad-section{background:var(--blue);padding:5rem 2.5rem}
+.squad-inner{max-width:900px;margin:0 auto}
+.squad-section .sec-label{color:var(--yellow)}
+.squad-section .sec-title{color:#fff}
+.squad-section .sec-sub{color:rgba(255,255,255,.7)}
+.squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.squad-card{background:rgba(255,255,255,.08);border:1px solid rgba(254,204,2,.2);border-radius:14px;padding:1.2rem;transition:border-color .2s,background .2s}
+.squad-card:hover{border-color:var(--yellow);background:rgba(255,255,255,.13)}
+.squad-pos{font-size:.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--yellow);margin-bottom:.3rem}
+.squad-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;letter-spacing:.5px}
+.squad-club{font-size:.8rem;color:rgba(255,255,255,.55);margin-top:.2rem}
+
+/* GRUPPE TABLE */
+.group-section{padding:5rem 2.5rem;max-width:900px;margin:0 auto}
+.group-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;border:2px solid var(--border)}
+.group-table th{background:var(--blue);color:#fff;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;padding:.9rem 1rem;text-align:left;font-weight:700}
+.group-table td{padding:.9rem 1rem;border-bottom:1px solid var(--border);font-size:.92rem}
+.group-table tr:last-child td{border-bottom:none}
+.group-table tr.sweden-row td{background:#EEF7FF;font-weight:700;color:var(--blue)}
+.group-table tr:hover td{background:#F5F9FF}
+.team-cell{display:flex;align-items:center;gap:.6rem}
+
+/* WATCH PROMO */
+.watch-promo{background:var(--yellow);padding:4rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.watch-promo::before{content:'🇸🇪';position:absolute;font-size:12rem;opacity:.08;top:-2rem;right:-2rem}
+.watch-promo-inner{max-width:600px;margin:0 auto;position:relative}
+.watch-promo h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);color:var(--blue);letter-spacing:2px;margin-bottom:.8rem}
+.watch-promo p{color:var(--blue);opacity:.8;font-size:1rem;line-height:1.7;margin-bottom:2rem;font-weight:600}
+.watch-promo-prices{display:flex;gap:1.5rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.wp-price{background:var(--blue);color:var(--yellow);padding:.6rem 1.5rem;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px}
+.wp-btn{background:var(--blue);color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;padding:1rem 3rem;border-radius:12px;text-decoration:none;display:inline-block;transition:transform .15s}
+.wp-btn:hover{transform:translateY(-3px)}
+
+/* SEO TEXT */
+.seo-section{padding:4rem 2.5rem;max-width:860px;margin:0 auto}
+.seo-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:var(--dark);margin-bottom:1rem}
+.seo-section h3{font-size:1.1rem;font-weight:800;color:var(--dark);margin:2rem 0 .5rem}
+.seo-section p{color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+
+/* FOOTER */
+footer{background:var(--dark);color:#555;padding:2rem;text-align:center;font-size:.85rem}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:3px;margin-bottom:.3rem}
+.foot-logo em{color:var(--orange);font-style:normal}
+
+/* MOBILE */
+@media(max-width:768px){
+  .vm-hero{padding:3.5rem 1.5rem}
+  .matches-section,.opponents,.group-section,.seo-section{padding:3.5rem 1.5rem}
+  .squad-section{padding:3.5rem 1.5rem}
+  .match-teams{gap:1rem}
+  .team-flag{font-size:2.2rem}
+  .vs{font-size:1.8rem}
+  .match-info{grid-template-columns:1fr 1fr;gap:.8rem}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark);padding:1rem 2rem;flex-direction:column;gap:1rem;align-items:flex-start;border-top:1px solid #333}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .squad-grid{grid-template-columns:1fr 1fr}
+  .watch-promo{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">Mr <em>Watch</em></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Hem</a>
+    <a href="#matcher">Matcher</a>
+    <a href="#trupp">Trupp</a>
+    <a href="#grupp">Grupp F</a>
+    <a href="/#bestall" class="nav-cta">🇸🇪 Köp nu</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="vm-hero">
+  <div class="vm-hero-inner">
+    <span class="vm-flag-big">🇸🇪</span>
+    <h1>SVERIGE<br>I <em>VM 2026</em></h1>
+    <p class="vm-hero-sub">Matchtider, motståndare, trupp och allt du behöver veta om Blågult i fotbolls-VM 2026 i USA, Kanada och Mexiko.</p>
+    <a href="#matcher" class="vm-hero-cta">Se Sveriges matcher →</a>
+  </div>
+</section>
+
+<!-- MATCHES -->
+<section class="matches-section" id="matcher">
+  <div class="sec-label">Grupp F · VM 2026</div>
+  <div class="sec-title">Sveriges matcher</div>
+  <p class="sec-sub">Sverige spelar tre gruppspelsmatcher. Alla tider är svensk tid – ställ klockan!</p>
+
+  <!-- MATCH 1 -->
+  <div class="match-card">
+    <div class="match-header">
+      <span class="match-num">Omgång 1 · Grupp F</span>
+      <span class="match-status">KOMMANDE</span>
+    </div>
+    <div class="match-body">
+      <div class="match-teams">
+        <div class="team">
+          <span class="team-flag">🇸🇪</span>
+          <div class="team-name sweden">Sverige</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team">
+          <span class="team-flag">🇹🇳</span>
+          <div class="team-name">Tunisien</div>
+        </div>
+      </div>
+      <div class="match-info">
+        <div class="match-info-item">
+          <div class="match-info-label">Datum</div>
+          <div class="match-info-value">Måndag 15 juni</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Avspark (svensk tid)</div>
+          <div class="match-info-value time">04:00</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Arena · Kanal</div>
+          <div class="match-info-value">Monterrey · SVT</div>
+        </div>
+      </div>
+      <div class="match-tip">💡 <strong>Tips:</strong> Sätt alarmet tidigt – det är nattmatch! Tunisien är gruppens outsider men har stark defensiv organisation. Sverige bör vinna, men det kan ta tid att knäcka dem.</div>
+    </div>
+  </div>
+
+  <!-- MATCH 2 -->
+  <div class="match-card">
+    <div class="match-header">
+      <span class="match-num">Omgång 2 · Grupp F</span>
+      <span class="match-status">KOMMANDE</span>
+    </div>
+    <div class="match-body">
+      <div class="match-teams">
+        <div class="team">
+          <span class="team-flag">🇳🇱</span>
+          <div class="team-name">Nederländerna</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team">
+          <span class="team-flag">🇸🇪</span>
+          <div class="team-name sweden">Sverige</div>
+        </div>
+      </div>
+      <div class="match-info">
+        <div class="match-info-item">
+          <div class="match-info-label">Datum</div>
+          <div class="match-info-value">Lördag 20 juni 🌸</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Avspark (svensk tid)</div>
+          <div class="match-info-value time">19:00</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Arena · Kanal</div>
+          <div class="match-info-value">Houston · TV4</div>
+        </div>
+      </div>
+      <div class="match-tip">🌸 <strong>Midsommarmatch!</strong> Nederländerna–Sverige på midsommarafton är en av turnerings mest omtalade matcher redan nu. Perfekt läge att hänga flagg, ta på sig blågult och heja fram Sverige med en Mr Watch på handleden.</div>
+    </div>
+  </div>
+
+  <!-- MATCH 3 -->
+  <div class="match-card">
+    <div class="match-header">
+      <span class="match-num">Omgång 3 · Grupp F</span>
+      <span class="match-status">KOMMANDE</span>
+    </div>
+    <div class="match-body">
+      <div class="match-teams">
+        <div class="team">
+          <span class="team-flag">🇸🇪</span>
+          <div class="team-name sweden">Sverige</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team">
+          <span class="team-flag">🇯🇵</span>
+          <div class="team-name">Japan</div>
+        </div>
+      </div>
+      <div class="match-info">
+        <div class="match-info-item">
+          <div class="match-info-label">Datum</div>
+          <div class="match-info-value">Fredag 26 juni</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Avspark (svensk tid)</div>
+          <div class="match-info-value time">01:00</div>
+        </div>
+        <div class="match-info-item">
+          <div class="match-info-label">Arena · Kanal</div>
+          <div class="match-info-value">Dallas · SVT</div>
+        </div>
+      </div>
+      <div class="match-tip">🌙 <strong>Nattmatch igen!</strong> Japan är gruppens mest tekniska lag och spelar snabb, kompakt fotboll. Avgörande match om gruppplacering. Koka kaffe – det är värt det!</div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP TABLE -->
+<section class="group-section" id="grupp">
+  <div class="sec-label">VM 2026</div>
+  <div class="sec-title">Grupp F</div>
+  <p class="sec-sub">Sverige möter Tunisien, Nederländerna och Japan. De två bästa går vidare – plus de åtta bästa grupptreorna.</p>
+  <table class="group-table">
+    <thead>
+      <tr>
+        <th>Lag</th>
+        <th>S</th><th>V</th><th>O</th><th>F</th>
+        <th>M</th><th>P</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="team-cell">🇳🇱 Nederländerna</div></td>
+        <td>0</td><td>0</td><td>0</td><td>0</td><td>0–0</td><td>0</td>
+      </tr>
+      <tr class="sweden-row">
+        <td><div class="team-cell">🇸🇪 Sverige</div></td>
+        <td>0</td><td>0</td><td>0</td><td>0</td><td>0–0</td><td>0</td>
+      </tr>
+      <tr>
+        <td><div class="team-cell">🇯🇵 Japan</div></td>
+        <td>0</td><td>0</td><td>0</td><td>0</td><td>0–0</td><td>0</td>
+      </tr>
+      <tr>
+        <td><div class="team-cell">🇹🇳 Tunisien</div></td>
+        <td>0</td><td>0</td><td>0</td><td>0</td><td>0–0</td><td>0</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.8rem;color:var(--muted);margin-top:.8rem;text-align:center">Tabellen uppdateras när matcherna spelas. VM startar 11 juni 2026.</p>
+</section>
+
+<!-- OPPONENTS -->
+<section class="opponents" id="motstandare">
+  <div class="sec-label">Grupp F</div>
+  <div class="sec-title">Motståndarna</div>
+  <p class="sec-sub">Vem möter Sverige i VM 2026? Här är allt du behöver veta.</p>
+
+  <div class="opp-card">
+    <div class="opp-header">
+      <div class="opp-flag">🇹🇳</div>
+      <div>
+        <div class="opp-title">Tunisien</div>
+        <div class="opp-sub">Möter Sverige: Måndag 15 juni, 04:00</div>
+      </div>
+    </div>
+    <div class="opp-body">
+      <p>Tunisien gör sitt tredje raka VM och är gruppens outsider. Styrkan ligger i en solid defensiv organisation och förmågan att spela på kontringar. Offensivt är de begränsade och saknar en riktigt pålitlig målskytt på internationell nivå. Nyckelspelaren Ellyes Skhiri styr mittfältet och är deras viktigaste kugge.</p>
+    </div>
+    <div class="opp-tags">
+      <span class="opp-tag">Defensivt lag</span>
+      <span class="opp-tag">Kontringsfarliga</span>
+      <span class="opp-tag">7:e VM-deltagandet</span>
+      <span class="opp-tag">Aldrig nått slutspel</span>
+    </div>
+  </div>
+
+  <div class="opp-card">
+    <div class="opp-header">
+      <div class="opp-flag">🇳🇱</div>
+      <div>
+        <div class="opp-title">Nederländerna</div>
+        <div class="opp-sub">Möter Sverige: Lördag 20 juni (midsommar!), 19:00</div>
+      </div>
+    </div>
+    <div class="opp-body">
+      <p>Nederländerna är grupptippade favoriter och ett av turnerings starkaste lag. De tog sig till Nations League-finalen nyligen och spelar elegant, possessionsinriktat fotboll. För Sverige handlar det om att hålla tätt och ta chanserna när de ges. En poäng vore ett bra resultat.</p>
+    </div>
+    <div class="opp-tags">
+      <span class="opp-tag">Gruppfavoriter</span>
+      <span class="opp-tag">Nations League-finalisterna</span>
+      <span class="opp-tag">Teknisk fotboll</span>
+      <span class="opp-tag">Midsommarmatch!</span>
+    </div>
+  </div>
+
+  <div class="opp-card">
+    <div class="opp-header">
+      <div class="opp-flag">🇯🇵</div>
+      <div>
+        <div class="opp-title">Japan</div>
+        <div class="opp-sub">Möter Sverige: Fredag 26 juni, 01:00</div>
+      </div>
+    </div>
+    <div class="opp-body">
+      <p>Japan är den tuffaste konkurrenten om andraplatsen. Nästan hela truppen spelar i europeiska toppligorna och laget är känt för sitt intensiva presspel och snabba passningskombinationer. Svagheten är det fysiska spelet – något Sverige kan utnyttja med spelare som Gyökeres och Isak i anfallet.</p>
+    </div>
+    <div class="opp-tags">
+      <span class="opp-tag">Teknisk och snabb</span>
+      <span class="opp-tag">Intensivt press</span>
+      <span class="opp-tag">Europeiska toppklubbar</span>
+      <span class="opp-tag">Fysiskt svagare</span>
+    </div>
+  </div>
+</section>
+
+<!-- SQUAD -->
+<section class="squad-section" id="trupp">
+  <div class="squad-inner">
+    <div class="sec-label">Graham Potters uttagna trupp</div>
+    <div class="sec-title" style="color:#fff">Sveriges VM-trupp</div>
+    <p class="sec-sub">26 spelare uttagna till VM 2026. Viktor Gyökeres och Alexander Isak bär det tyngsta anfallsansvaret.</p>
+    <div class="squad-grid">
+      <div class="squad-card"><div class="squad-pos">Målvakt</div><div class="squad-name">Kristoffer Nordfeldt</div><div class="squad-club">AIK</div></div>
+      <div class="squad-card"><div class="squad-pos">Målvakt</div><div class="squad-name">Viktor Johansson</div><div class="squad-club">Stoke City</div></div>
+      <div class="squad-card"><div class="squad-pos">Målvakt</div><div class="squad-name">Jacob W. Zetterström</div><div class="squad-club">Derby County</div></div>
+      <div class="squad-card"><div class="squad-pos">Försvar</div><div class="squad-name">Victor N. Lindelöf</div><div class="squad-club">Manchester United</div></div>
+      <div class="squad-card"><div class="squad-pos">Försvar</div><div class="squad-name">Isak Hien</div><div class="squad-club">Atalanta</div></div>
+      <div class="squad-card"><div class="squad-pos">Försvar</div><div class="squad-name">Gabriel Gudmundsson</div><div class="squad-club"></div></div>
+      <div class="squad-card"><div class="squad-pos">Försvar</div><div class="squad-name">Daniel Svensson</div><div class="squad-club"></div></div>
+      <div class="squad-card"><div class="squad-pos">Mittfält</div><div class="squad-name">Hugo Larsson</div><div class="squad-club">Eintracht Frankfurt</div></div>
+      <div class="squad-card"><div class="squad-pos">Mittfält</div><div class="squad-name">Yasin Ayari</div><div class="squad-club">Brighton</div></div>
+      <div class="squad-card"><div class="squad-pos">Mittfält</div><div class="squad-name">Lucas Bergvall</div><div class="squad-club">Tottenham</div></div>
+      <div class="squad-card"><div class="squad-pos">Mittfält</div><div class="squad-name">Williot Swedberg</div><div class="squad-club"></div></div>
+      <div class="squad-card"><div class="squad-pos">Mittfält</div><div class="squad-name">Roony Bardghji</div><div class="squad-club"></div></div>
+      <div class="squad-card" style="border-color:var(--yellow)"><div class="squad-pos">Anfall ⭐</div><div class="squad-name">Viktor Gyökeres</div><div class="squad-club">Arsenal</div></div>
+      <div class="squad-card" style="border-color:var(--yellow)"><div class="squad-pos">Anfall ⭐</div><div class="squad-name">Alexander Isak</div><div class="squad-club">Newcastle United</div></div>
+      <div class="squad-card"><div class="squad-pos">Anfall</div><div class="squad-name">Anthony Elanga</div><div class="squad-club">Newcastle United</div></div>
+      <div class="squad-card"><div class="squad-pos">Anfall</div><div class="squad-name">Gustaf Nilsson</div><div class="squad-club"></div></div>
+    </div>
+    <p style="color:rgba(255,255,255,.5);font-size:.8rem;margin-top:1.5rem;text-align:center">Förbundskapten: Graham Potter · Truppen offentliggjord 12 maj 2026</p>
+  </div>
+</section>
+
+<!-- WATCH PROMO -->
+<section class="watch-promo">
+  <div class="watch-promo-inner">
+    <h2>BÄR SVERIGE PÅ HANDLEDEN</h2>
+    <p>Den gula klockan med blå urtavla – perfekta blågult till varje match. Beställ din Sverige-klocka och visa ditt stöd under VM 2026!</p>
+    <div class="watch-promo-prices">
+      <div class="wp-price">1 klocka – 129 kr</div>
+      <div class="wp-price">3 klockor – 299 kr</div>
+    </div>
+    <a href="/#bestall" class="wp-btn">Beställ din Sverige-klocka →</a>
+  </div>
+</section>
+
+<!-- SEO TEXT -->
+<section class="seo-section">
+  <h2>Allt om Sverige i fotbolls-VM 2026</h2>
+  <p>Fotbolls-VM 2026 spelas i USA, Kanada och Mexiko mellan 11 juni och 19 juli. Det är det 23:e världsmästerskapet och för första gången deltar hela 48 nationer. Sverige är med – och Blågult spelar i grupp F tillsammans med Nederländerna, Japan och Tunisien.</p>
+
+  <h3>När spelar Sverige i VM 2026?</h3>
+  <p>Sverige spelar tre gruppspelsmatcher: mot Tunisien den 15 juni klockan 04:00 (svensk tid), mot Nederländerna den 20 juni klockan 19:00 på midsommarafton, och mot Japan den 26 juni klockan 01:00. Matcherna sänds på SVT och TV4.</p>
+
+  <h3>Var spelar Sverige i VM 2026?</h3>
+  <p>Sveriges matcher spelas i Monterrey i Mexiko samt i Houston och Dallas i USA. Förbundskapten Graham Potter leder laget med anfallsstjärnorna Viktor Gyökeres från Arsenal och Alexander Isak från Newcastle United som de stora dragplåstarna.</p>
+
+  <h3>Vilka är Sveriges motståndare i VM 2026?</h3>
+  <p>I grupp F möter Sverige Tunisien, Nederländerna och Japan. Nederländerna är tippade som stora gruppfavoriter. Japan är den tuffaste konkurrenten om andraplatsen – ett tekniskt lag med nästan hela truppen i europeiska toppligorna. Tunisien är en defensivt organiserad outsider.</p>
+
+  <h3>Stöd Sverige med rätt accessoarer</h3>
+  <p>Vill du visa ditt stöd för Blågult under VM? Mr Watch har silikonklockor i gult och blått – perfekta Sverige-färger. Byt armband och urtavla och skapa ditt eget blågula uttryck. Beställ på mrwatch.se för 129 kr styck eller 3 för 299 kr.</p>
+</section>
+
+<footer>
+  <div class="foot-logo">Mr <em>Watch</em></div>
+  <p style="color:var(--yellow);font-size:.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem">Color Your Life 🇸🇪</p>
+  <p>&copy; 2025 Mr Watch · <a href="/" style="color:#666;text-decoration:none">mrwatch.se</a> · <a href="mailto:mrwatch.se@hotmail.com" style="color:#666;text-decoration:none">mrwatch.se@hotmail.com</a></p>
+</footer>
+
+</body>
+</html>
