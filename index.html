@@ -10,6 +10,7 @@
 :root{
   --orange:#E8601A;--dark:#181818;--light:#F8F7F4;--white:#fff;
   --text:#1A1A1A;--muted:#777;--border:#EAEAE4;
+  --sweden-blue:#006AA7;--sweden-yellow:#FECC02;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden}
@@ -24,6 +25,48 @@ nav{background:var(--dark);padding:.9rem 2.5rem;display:flex;justify-content:spa
 .nav-cta{background:var(--orange)!important;color:#fff!important;padding:.5rem 1.3rem;border-radius:8px}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.3rem}
 .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+
+/* VM BANNER */
+.vm-banner{
+  background: var(--sweden-blue);
+  padding:1.2rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  flex-wrap:wrap;
+  border-bottom:4px solid var(--sweden-yellow);
+  position:relative;overflow:hidden;
+}
+.vm-banner::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(254,204,2,.06) 60px,rgba(254,204,2,.06) 61px);
+}
+.vm-left{display:flex;align-items:center;gap:1.2rem;position:relative}
+.vm-flag{font-size:2.5rem;line-height:1}
+.vm-text h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--sweden-yellow);line-height:1}
+.vm-text p{color:rgba(255,255,255,.85);font-size:.88rem;margin-top:.2rem}
+.vm-colors{display:flex;gap:.6rem;align-items:center;position:relative}
+.vm-swatch{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.3)}
+.vm-cta{background:var(--sweden-yellow);color:var(--sweden-blue);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1px;padding:.6rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:700;white-space:nowrap;transition:transform .15s;cursor:pointer;position:relative}
+.vm-cta:hover{transform:translateY(-2px)}
+
+/* VM SECTION */
+.vm-section{background:var(--sweden-blue);padding:4rem 2.5rem;position:relative;overflow:hidden}
+.vm-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--sweden-yellow)}
+.vm-section-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.vm-section-text{}
+.vm-section-label{font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sweden-yellow);margin-bottom:.5rem}
+.vm-section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;line-height:.95;letter-spacing:2px;margin-bottom:1.2rem}
+.vm-section-title em{color:var(--sweden-yellow);font-style:normal}
+.vm-section-desc{color:rgba(255,255,255,.8);line-height:1.75;font-size:1rem;margin-bottom:2rem}
+.vm-watches{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.vm-watch-card{background:rgba(255,255,255,.08);border:1.5px solid rgba(254,204,2,.3);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s}
+.vm-watch-card:hover{transform:translateY(-4px);border-color:var(--sweden-yellow)}
+.vm-watch-img{aspect-ratio:1;overflow:hidden}
+.vm-watch-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.vm-watch-card:hover .vm-watch-img img{transform:scale(1.05)}
+.vm-watch-label{padding:.8rem 1rem;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1px;color:#fff}
+.vm-watch-label span{color:var(--sweden-yellow)}
+.btn-sweden{background:var(--sweden-yellow);color:var(--sweden-blue);font-weight:800;padding:.9rem 2rem;border-radius:10px;text-decoration:none;font-size:.95rem;display:inline-block;transition:transform .15s;cursor:pointer}
+.btn-sweden:hover{transform:translateY(-2px)}
 
 /* HERO */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;max-width:1300px;margin:0 auto;padding:4rem 2.5rem;gap:3rem;align-items:center}
@@ -42,7 +85,7 @@ nav{background:var(--dark);padding:.9rem 2.5rem;display:flex;justify-content:spa
 .btn-secondary{background:transparent;color:var(--dark);border:2px solid var(--border)}
 .btn-secondary:hover{border-color:var(--dark)}
 .hero-img{border-radius:20px;overflow:hidden;aspect-ratio:1;background:#f0ede8}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-img img{width:100%;height:100%;object-fit:cover}
 
 /* TICKER */
 .ticker{background:var(--orange);padding:.7rem 0;overflow:hidden;white-space:nowrap}
@@ -82,31 +125,47 @@ nav{background:var(--dark);padding:.9rem 2.5rem;display:flex;justify-content:spa
 .deal-strip{background:var(--orange);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .deal-strip h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:1px}
 .deal-strip p{color:rgba(255,255,255,.8);font-size:.9rem}
-.deal-strip .btn{background:#fff;color:var(--orange)}
-.deal-strip .btn:hover{background:#f5f5f5}
+.deal-strip .btn-white{background:#fff;color:var(--orange);display:inline-block;padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;cursor:pointer}
+.deal-strip .btn-white:hover{background:#f5f5f5}
 
-/* ORDER SECTION */
-.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0 4rem}
-.step{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem}
+/* ORDER */
+.order-intro{background:var(--white);border:2px solid var(--border);border-radius:20px;padding:2rem 2.5rem;margin-bottom:3rem;display:flex;gap:1.5rem;align-items:flex-start}
+.order-intro-icon{font-size:2.5rem;flex-shrink:0}
+.order-intro h3{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:.4rem}
+.order-intro p{color:var(--muted);font-size:.92rem;line-height:1.7}
+.order-intro strong{color:var(--dark)}
+
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0 3rem}
+.step{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;position:relative}
+.step.step-mail{border-color:#006AA7;border-width:2px}
+.step.step-swish{border-color:#4CAF50;border-width:2px}
 .step-n{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--border);line-height:1;margin-bottom:.6rem}
-.step h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.step.step-mail .step-n{color:#cce4f0}
+.step.step-swish .step-n{color:#c8e6c9}
+.step h3{font-size:1rem;font-weight:800;margin-bottom:.5rem;color:var(--dark)}
 .step p{font-size:.88rem;color:var(--muted);line-height:1.6}
+.step-badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.25rem .7rem;border-radius:20px;margin-bottom:.7rem}
+.badge-mail{background:#e3f2fd;color:#006AA7}
+.badge-swish{background:#E8F5E9;color:#2E7D32}
+.badge-done{background:#FFF3E0;color:var(--orange)}
 
-/* PAYMENT BOX */
-.payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
+/* PAYMENT */
+.payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
 .pay-box{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;text-align:center}
-.pay-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;margin-bottom:1.5rem;color:var(--dark)}
-.swish-qr img{width:200px;height:200px;object-fit:contain;border-radius:12px}
-.swish-nr{font-size:1.5rem;font-weight:700;letter-spacing:3px;color:var(--dark);margin:1rem 0 .5rem;display:block}
-.swish-note{color:var(--muted);font-size:.85rem;line-height:1.6}
-.mail-box{}
-.mail-icon{font-size:3rem;margin-bottom:1rem}
-.mail-addr{font-size:1rem;font-weight:700;color:var(--orange);word-break:break-all;margin:1rem 0}
-.mail-note{color:var(--muted);font-size:.88rem;line-height:1.7}
-.mail-note strong{color:var(--dark);font-weight:700}
+.pay-box.mail-box{border-color:#006AA7;border-width:2px}
+.pay-box.swish-box{border-color:#4CAF50;border-width:2px}
+.pay-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;margin-bottom:.5rem;color:var(--dark)}
+.pay-box .pay-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem}
+.swish-qr img{width:180px;height:180px;object-fit:contain;border-radius:12px}
+.swish-nr{font-size:1.4rem;font-weight:700;letter-spacing:3px;color:var(--dark);margin:1rem 0 .5rem;display:block}
+.pay-note{color:var(--muted);font-size:.85rem;line-height:1.7;margin-top:.8rem}
+.pay-note strong{color:var(--dark)}
+.mail-icon{font-size:3rem;margin-bottom:.8rem}
+.mail-addr a{color:var(--sweden-blue);text-decoration:none;font-size:1rem;font-weight:700;word-break:break-all}
+.mail-addr{margin:1rem 0}
 
 /* PRICE BOXES */
-.price-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem}
+.price-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem}
 .price-box{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;text-align:center}
 .price-num{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;line-height:1}
 .price-label{font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
@@ -128,13 +187,18 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
   .price-boxes{grid-template-columns:1fr 1fr}
   .section{padding:3.5rem 1.5rem}
   .deal-strip{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .vm-section-inner{grid-template-columns:1fr;gap:2.5rem}
+  .vm-watches{grid-template-columns:1fr 1fr}
+  .vm-banner{padding:1rem 1.5rem}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark);padding:1rem 2rem;flex-direction:column;gap:1rem;align-items:flex-start;border-top:1px solid #333}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
+  .order-intro{flex-direction:column;gap:1rem}
 }
 @media(max-width:500px){
   .pgrid{grid-template-columns:1fr 1fr}
   .price-boxes{grid-template-columns:1fr}
+  .vm-watches{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -142,17 +206,33 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
 
 <!-- NAV -->
 <nav>
-  <div class="logo" onclick="scrollToTop()">Mr <em>Watch</em></div>
+  <div class="logo" onclick="goTo('top')">Mr <em>Watch</em></div>
   <div class="nav-links" id="navLinks">
-    <a onclick="scrollTo('#klockor')">Klockor</a>
-    <a onclick="scrollTo('#bestall')">Beställ</a>
-    <a onclick="scrollTo('#kontakt')">Kontakt</a>
-    <a onclick="scrollTo('#bestall')" class="nav-cta">129 kr/st</a>
+    <a onclick="goTo('klockor')">Klockor</a>
+    <a onclick="goTo('bestall')">Beställ</a>
+    <a href="mailto:mrwatch.se@hotmail.com">Kontakt</a>
+    <a onclick="goTo('bestall')" class="nav-cta">129 kr/st</a>
   </div>
   <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Meny">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- VM BANNER -->
+<div class="vm-banner">
+  <div class="vm-left">
+    <div class="vm-flag">🇸🇪</div>
+    <div class="vm-text">
+      <h2>VM 2026 – Visa dina färger!</h2>
+      <p>Matcha klockan med det svenska blågult – perfekt till matcherna</p>
+    </div>
+  </div>
+  <div class="vm-colors">
+    <div class="vm-swatch" style="background:#FECC02"></div>
+    <div class="vm-swatch" style="background:#006AA7"></div>
+  </div>
+  <div class="vm-cta" onclick="goTo('vm')">Se Sverige-kombinationerna</div>
+</div>
 
 <!-- HERO -->
 <section style="background:#fff;border-bottom:1px solid var(--border)">
@@ -167,8 +247,8 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
         <div class="price-deal">3 för 299 kr – spara 88 kr</div>
       </div>
       <div class="hero-btns">
-        <a class="btn btn-primary" onclick="scrollTo('#klockor')">Se klockorna</a>
-        <a class="btn btn-secondary" onclick="scrollTo('#bestall')">Beställ nu</a>
+        <a class="btn btn-primary" onclick="goTo('klockor')">Se klockorna</a>
+        <a class="btn btn-secondary" onclick="goTo('bestall')">Beställ nu</a>
       </div>
     </div>
     <div class="hero-img">
@@ -180,8 +260,8 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">129 KR / ST</span><span class="t b">3 FÖR 299 KR</span><span class="t">UTBYTBARA ARMBAND</span><span class="t b">KVADRATSERIEN</span><span class="t">MRWATCH.SE</span>
-    <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">129 KR / ST</span><span class="t b">3 FÖR 299 KR</span><span class="t">UTBYTBARA ARMBAND</span><span class="t b">KVADRATSERIEN</span><span class="t">MRWATCH.SE</span>
+    <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">129 KR / ST</span><span class="t b">3 FÖR 299 KR</span><span class="t">UTBYTBARA ARMBAND</span><span class="t b">🇸🇪 VM 2026</span><span class="t">VISA DINA FÄRGER</span>
+    <span class="t b">COLOR YOUR LIFE</span><span class="t">SILIKONKLOCKOR</span><span class="t b">MR WATCH</span><span class="t">129 KR / ST</span><span class="t b">3 FÖR 299 KR</span><span class="t">UTBYTBARA ARMBAND</span><span class="t b">🇸🇪 VM 2026</span><span class="t">VISA DINA FÄRGER</span>
   </div>
 </div>
 
@@ -194,9 +274,9 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
     <div class="pcard">
       <div class="pcard-img"><img src="img/watch-yellow-blue-1.jpg" alt="Gul med blå urtavla"></div>
       <div class="pcard-body">
-        <div class="pcard-name">Gul / Blå</div>
-        <p class="pcard-desc">Solklar gul med elektrisk blå urtavla. En riktig blickfångare.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-name">Gul / Blå 🇸🇪</div>
+        <p class="pcard-desc">Perfekta Sverige-färgerna. Visa ditt stöd under VM!</p>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -204,7 +284,7 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Rosa</div>
         <p class="pcard-desc">Söt och feminin. Perfekt till det mesta.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -212,7 +292,7 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Lila</div>
         <p class="pcard-desc">Djup och distinkt. En klassiker i kollektionen.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -220,7 +300,7 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Magenta</div>
         <p class="pcard-desc">Knallrosa och oemotståndlig. Syns på långt håll.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -228,7 +308,7 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Neongrön</div>
         <p class="pcard-desc">Fräsch och energisk. Lyser upp vilken outfit.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -236,7 +316,7 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Brun</div>
         <p class="pcard-desc">Varm och jordnära. Passar höst och vinter.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
     <div class="pcard">
@@ -244,42 +324,72 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
       <div class="pcard-body">
         <div class="pcard-name">Vit</div>
         <p class="pcard-desc">Ren och stilren. En favorit för mix &amp; match.</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#bestall')">Beställ</a></div>
-      </div>
-    </div>
-    <div class="pcard">
-      <div class="pcard-img"><img src="img/watch-tree.jpg" alt="Hela kollektionen"></div>
-      <div class="pcard-body">
-        <div class="pcard-name">Fler färger</div>
-        <p class="pcard-desc">Vi har fler färger – maila oss så berättar vi vad som finns i lager!</p>
-        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="scrollTo('#kontakt')">Fråga oss</a></div>
+        <div class="pcard-foot"><div class="pcard-price">129 kr</div><a class="pcard-btn" onclick="goTo('bestall')">Beställ</a></div>
       </div>
     </div>
   </div>
 
-  <!-- MIX CARD -->
   <div class="wide-card">
     <div class="wide-card-img"><img src="img/watch-white-mix.jpg" alt="Mix och match"></div>
     <div class="wide-card-body">
       <div class="sec-label">Tips</div>
       <div class="pcard-name" style="font-size:2rem;margin-bottom:.8rem">Mix &amp; Match</div>
       <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">Det roligaste med Mr Watch är att kombinera. Byt armbandet mot en annan urtavla – eller tvärtom. Köp tre valfria färger för bara 299 kr och ha alltid rätt look.</p>
-      <a class="btn btn-primary" onclick="scrollTo('#bestall')">Beställ 3-pack – 299 kr</a>
+      <a class="btn btn-primary" onclick="goTo('bestall')">Beställ 3-pack – 299 kr</a>
     </div>
   </div>
 </div>
 
+<!-- VM SECTION -->
+<section class="vm-section" id="vm">
+  <div class="vm-section-inner">
+    <div class="vm-section-text">
+      <div class="vm-section-label">🇸🇪 Fotbolls-VM 2026</div>
+      <div class="vm-section-title">VISA DINA<br><em>FÄRGER</em></div>
+      <p class="vm-section-desc">Sverige spelar VM – och nu kan du bära blågult på handleden. Den gula klockan med blå urtavla är den perfekta matchuret. Kombinera med den blå eller vita varianten för ett komplett Sverige-set.</p>
+      <a class="btn-sweden" onclick="goTo('bestall')">Beställ ditt Sverige-set – 3 för 299 kr</a>
+    </div>
+    <div class="vm-watches">
+      <div class="vm-watch-card">
+        <div class="vm-watch-img"><img src="img/watch-yellow-blue-2.jpg" alt="Gul klocka Sverige"></div>
+        <div class="vm-watch-label">Gul armband<br><span>Blå urtavla</span></div>
+      </div>
+      <div class="vm-watch-card">
+        <div class="vm-watch-img"><img src="img/watch-yellow-blue-1.jpg" alt="Sverige-klocka"></div>
+        <div class="vm-watch-label">Sverige<br><span>Edition 🇸🇪</span></div>
+      </div>
+      <div class="vm-watch-card">
+        <div class="vm-watch-img"><img src="img/watch-white-sq.jpg" alt="Vit klocka"></div>
+        <div class="vm-watch-label">Vit<br><span>Matchar allt</span></div>
+      </div>
+      <div class="vm-watch-card">
+        <div class="vm-watch-img"><img src="img/watch-white-mix.jpg" alt="Mix"></div>
+        <div class="vm-watch-label">Mix &amp; Match<br><span>3 för 299 kr</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- DEAL STRIP -->
 <div class="deal-strip">
   <div><h3>3 klockor – 299 kr</h3><p>Valfria färger. Spara 88 kr jämfört med styckpris.</p></div>
-  <a class="btn" onclick="scrollTo('#bestall')">Beställ nu</a>
+  <a class="btn-white" onclick="goTo('bestall')">Beställ nu</a>
 </div>
 
 <!-- ORDER -->
 <div class="section" id="bestall">
   <div class="sec-label">Beställning</div>
   <div class="sec-title">Så här beställer du</div>
-  <p class="sec-sub">Betala med Swish eller maila din beställning – enkelt och snabbt.</p>
+  <p class="sec-sub">Du behöver göra <strong>två saker</strong> för att slutföra din beställning – ett mail och en Swish.</p>
+
+  <!-- INTRO BOX -->
+  <div class="order-intro">
+    <div class="order-intro-icon">💡</div>
+    <div>
+      <h3>Varför både mail och Swish?</h3>
+      <p>Swish har begränsat utrymme för meddelanden, så vi ber dig skicka dina kontaktuppgifter och önskad färg via mail. Sedan bekräftar du betalningen via Swish. <strong>Båda stegen krävs</strong> för att vi ska kunna skicka din beställning.</p>
+    </div>
+  </div>
 
   <div class="price-boxes">
     <div class="price-box">
@@ -295,32 +405,46 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
   </div>
 
   <div class="steps-row">
-    <div class="step"><div class="step-n">01</div><h3>Välj färg</h3><p>Bestäm vilken eller vilka färger du vill ha. En för 129 kr, tre för 299 kr.</p></div>
-    <div class="step"><div class="step-n">02</div><h3>Betala &amp; meddela</h3><p>Swisha eller maila med namn, adress, telefonnummer och önskad färg.</p></div>
-    <div class="step"><div class="step-n">03</div><h3>Vi skickar</h3><p>Vi bekräftar din order och skickar direkt.</p></div>
+    <div class="step step-mail">
+      <div class="step-badge badge-mail">Steg 1</div>
+      <div class="step-n">01</div>
+      <h3>✉️ Skicka ett mail</h3>
+      <p>Maila oss med ditt <strong>namn, adress, telefonnummer</strong> och <strong>önskad färg</strong>. Vi bekräftar din order via mail.</p>
+    </div>
+    <div class="step step-swish">
+      <div class="step-badge badge-swish">Steg 2</div>
+      <div class="step-n">02</div>
+      <h3>💸 Swisha betalningen</h3>
+      <p>Swisha rätt belopp (129 kr/st eller 299 kr för 3). Skriv ditt <strong>namn</strong> i meddelandefältet så vi kan matcha betalningen.</p>
+    </div>
+    <div class="step">
+      <div class="step-badge badge-done">Steg 3</div>
+      <div class="step-n">03</div>
+      <h3>📦 Vi skickar!</h3>
+      <p>När vi mottagit både mailet och betalningen skickar vi din beställning direkt. Du får en bekräftelse via mail.</p>
+    </div>
   </div>
 
   <div class="payment-grid">
-    <!-- SWISH -->
-    <div class="pay-box">
-      <h3>Betala med Swish</h3>
+    <div class="pay-box mail-box">
+      <h3>✉️ Steg 1 – Maila oss</h3>
+      <p class="pay-sub">Skicka beställning och kontaktuppgifter</p>
+      <div class="mail-icon">📧</div>
+      <div class="mail-addr">
+        <a href="mailto:mrwatch.se@hotmail.com">mrwatch.se@hotmail.com</a>
+      </div>
+      <p class="pay-note">Ange: <strong>namn, adress, telefonnummer</strong> och <strong>önskad färg/antal</strong></p>
+      <a href="mailto:mrwatch.se@hotmail.com?subject=Beställning Mr Watch&body=Hej!%0A%0AJag vill beställa:%0AFärg:%0AAntal:%0A%0ANamn:%0AAdress:%0ATelefonnummer:%0A%0AMvh" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block">Öppna mailformulär</a>
+    </div>
+
+    <div class="pay-box swish-box">
+      <h3>💸 Steg 2 – Swisha</h3>
+      <p class="pay-sub">Betala efter att du skickat mailet</p>
       <div class="swish-qr">
         <img src="img/swish-qr.png" alt="Swish QR-kod">
       </div>
       <span class="swish-nr">+46 70 222 05 55</span>
-      <p class="swish-note">Scanna QR-koden eller sök på numret i Swish.<br>Ange <strong>namn, adress, telefonnr och färg</strong> i meddelandet.</p>
-    </div>
-
-    <!-- EMAIL -->
-    <div class="pay-box mail-box" id="kontakt">
-      <h3>Maila din beställning</h3>
-      <div class="mail-icon">✉️</div>
-      <p class="mail-note">Skicka din beställning eller dina frågor till:</p>
-      <div class="mail-addr">
-        <a href="mailto:mrwatch.se@hotmail.com" style="color:var(--orange);text-decoration:none;font-size:1.05rem;font-weight:700">mrwatch.se@hotmail.com</a>
-      </div>
-      <p class="mail-note">Ange <strong>namn, adress, telefonnummer</strong> och <strong>önskad färg</strong> på klockan i mailet. Vi svarar så snart vi kan!</p>
-      <a href="mailto:mrwatch.se@hotmail.com" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block">Skicka mail</a>
+      <p class="pay-note">Scanna QR-koden eller sök på numret.<br>Skriv ditt <strong>namn</strong> i meddelandefältet.</p>
     </div>
   </div>
 </div>
@@ -333,12 +457,11 @@ footer{background:var(--dark);color:#555;padding:2.5rem;text-align:center}
 </footer>
 
 <script>
-function scrollTo(id){
-  document.querySelector(id).scrollIntoView({behavior:'smooth'});
+function goTo(id){
+  if(id==='top'){window.scrollTo({top:0,behavior:'smooth'});return;}
+  const el=document.getElementById(id);
+  if(el){const y=el.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'});}
   document.getElementById('navLinks').classList.remove('open');
-}
-function scrollToTop(){
-  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
