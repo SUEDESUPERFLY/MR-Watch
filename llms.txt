@@ -39,5 +39,5 @@ Mr Watch är en svensk webbutik som säljer silikonklockor i massor av färger. 
 ## Sidor
 
 - [Startsida](https://mrwatch.se/) – alla klockor och beställning
-- [Back to School](https://mrwatch.se/skola.html) – klocka till skolstart för barn 6–16 år
+- [Klockor för barn & tonåringar](https://mrwatch.se/skola.html) – rolig, tålig silikonklocka för barn 6–16 år
 - [Present under 150 kr](https://mrwatch.se/present.html) – presentidéer för alla tillfällen
